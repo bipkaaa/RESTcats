@@ -1,12 +1,11 @@
-import React from "react";
-import { Button, Description } from "@headlessui/react";
-import { Switch } from "@headlessui/react";
 import { useState } from "react";
+import { Button } from "@mui/material";
 
 interface Cat {
   name: string;
   type: string;
   description: string;
+  picture_src: string;
 }
 
 const Wiki = () => {
@@ -14,6 +13,7 @@ const Wiki = () => {
     name: "none",
     type: "NONE",
     description: "noneMeow",
+    picture_src: "./public/mockups/swagger.jpg",
   });
 
   const mockedCats: Cat[] = [
@@ -21,16 +21,103 @@ const Wiki = () => {
       name: "cutie",
       type: "GET",
       description: "meowie meow",
+      picture_src: "./public/mockups/get_kittie.jpg",
     },
     {
       name: "neutral",
       type: "POST",
       description: "meow",
+      picture_src: "./public/mockups/post_kittie.jpg",
     },
     {
       name: "killer",
       type: "DELETE",
       description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
+    },
+    {
+      name: "killer",
+      type: "DELETE",
+      description: "aggressive meow",
+      picture_src: "./public/mockups/delete_kittie.jpg",
     },
   ];
 
@@ -42,15 +129,17 @@ const Wiki = () => {
       </article>
 
       <section className="flex flex-row">
-        <aside className="bg-red-300 flex flex-row">
+        <aside className="flex flex-wrap gap-4 max-w-128 overflow-y-auto h-256">
           {mockedCats.map((cat) => (
             <Button
+              variant="outlined"
               key={cat.name}
               onClick={() => setSelectedCat(cat)}
               className="flex flex-col"
             >
               <div>{cat.name}</div>
               <div>{cat.type}</div>
+              <img src={cat.picture_src} className="size-32" />
             </Button>
           ))}
         </aside>
@@ -58,6 +147,7 @@ const Wiki = () => {
           {selectedCat.name}
           {selectedCat.type}
           {selectedCat.description}
+          <img src={selectedCat.picture_src} className="size-32" />
         </article>
       </section>
     </main>
