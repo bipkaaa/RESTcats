@@ -1,4 +1,4 @@
-from app.services.cats_service import get_all_cats
+from services.cats_service import get_all_cats
 from fastapi import APIRouter
 
 router = APIRouter()
